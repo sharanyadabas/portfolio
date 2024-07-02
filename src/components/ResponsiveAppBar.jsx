@@ -119,6 +119,7 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Link
+                key={page}
                 to={`/${page.toLowerCase()}`}
                 style={{ textDecoration: "none", color: "inherit" }}
               >

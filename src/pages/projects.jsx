@@ -1,19 +1,13 @@
 import React from "react";
 import ResponsiveAppBar from "../components/ResponsiveAppBar";
-import ActionAreaCard from "../components/ProjectCard";
+import ProjectCard from "../components/ProjectCard";
 import ThemeBox from "../components/ThemeBox";
 import Stack from "@mui/material/Stack";
-import Divider from "@mui/material/Divider";
+import IconButton from "@mui/material/IconButton";
 
-const small = {
-  width: 260,
-  height: 130,
-};
-
-const main = {
-  width: 600,
-  height: 350,
-};
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import MainProjectCard from "../components/MainProjectCard";
 
 const ExerciseEngine = {
   title: "Exercise Engine",
@@ -36,25 +30,107 @@ const Calculator = {
   link: "https://sharanyadabas.github.io/calculator/",
 };
 
-const projects = [ExerciseEngine, EtchSketch, Calculator];
+const ExtraProject = {
+  title: "ExtraProject",
+  description: "Id voluptate dolor enim laborum ea ipsum.",
+  image: "",
+  link: "",
+};
+const ExtraProject2 = {
+  title: "ExtraProject2",
+  description: "Duis aute nulla qui do est amet Lorem officia reprehenderit.",
+  image: "",
+  link: "",
+};
+
+const allProjects = [
+  ExerciseEngine,
+  EtchSketch,
+  Calculator,
+  ExtraProject,
+  ExtraProject2,
+];
 
 function Projects() {
+  const [pointers, setPointers] = React.useState({ left: 0, right: 3 });
+  const [projects, setProjects] = React.useState([]);
+  const [mainCard, setMainCard] = React.useState(allProjects[1]);
+
+  const sliceWrap = (array, start, end) => {
+    if (start <= end) {
+      return array.slice(start, end + 1);
+    } else {
+      return array.slice(start).concat(array.slice(0, end + 1));
+    }
+  };
+
+  const changeMainCard = (project) => {
+    console.log("changing main card to ", project.title);
+    setMainCard(project);
+  };
+
+  React.useEffect(() => {
+    const updatedProjects = sliceWrap(
+      allProjects,
+      pointers.left,
+      pointers.right
+    );
+    setProjects(updatedProjects);
+  }, [pointers]);
+
+  const shiftProjectsRight = () => {
+    const leftPointer = (pointers.left + 1) % allProjects.length;
+    const rightPointer = (pointers.right + 1) % allProjects.length;
+    setPointers({ left: leftPointer, right: rightPointer });
+  };
+  const shiftProjectsLeft = () => {
+    const leftPointer =
+      pointers.left === 0 ? allProjects.length - 1 : pointers.left - 1;
+    const rightPointer =
+      pointers.right === 0 ? allProjects.length - 1 : pointers.right - 1;
+    setPointers({ left: leftPointer, right: rightPointer });
+  };
+
   return (
-    <>
+    <div style={{ height: "100vh", display: "flex", flexDirection: "column" }}>
       <ResponsiveAppBar />
-      <ThemeBox display="flex" alignItems="center" flexDirection="column">
-        <ActionAreaCard size={main} {...ExerciseEngine} />
-        <Stack
-          direction="row"
-          divider={<Divider orientation="vertical" flexItem />}
-          spacing={2}
-        >
+      <ThemeBox
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        flexGrow="1"
+        gap="5vh"
+      >
+        <Stack direction="row" alignItems="center" gap="3vw">
+          <MainProjectCard {...mainCard} />
+        </Stack>
+        <Stack direction="row" spacing={7} alignItems="center">
+          <IconButton
+            color="inherit"
+            sx={{ width: 60, height: 60 }}
+            onClick={shiftProjectsLeft}
+          >
+            <KeyboardArrowLeftIcon sx={{ fontSize: 70 }} />
+          </IconButton>
+          
           {projects.map((project) => (
-            <ActionAreaCard size={small} {...project} />
+            <ProjectCard
+              key={project.title}
+              {...project}
+              onClick={() => changeMainCard(project)}
+            />
           ))}
+          <IconButton
+            color="inherit"
+            sx={{ width: 60, height: 60 }}
+            onClick={shiftProjectsRight}
+          >
+            <KeyboardArrowRightIcon sx={{ fontSize: 70 }} />
+          </IconButton>
         </Stack>
       </ThemeBox>
-    </>
+    </div>
   );
 }
 

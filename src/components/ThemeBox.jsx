@@ -7,7 +7,6 @@ function ThemeBox({ children, ...props }) {
       sx={{
         bgcolor: "background.default",
         color: "text.primary",
-        height: "100vh",
       }}
       {...props}
     >
