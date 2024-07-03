@@ -5,16 +5,21 @@ import ThemeBox from "../components/ThemeBox";
 import Stack from "@mui/material/Stack";
 import IconButton from "@mui/material/IconButton";
 import { motion } from "framer-motion";
+import Paper from "@mui/material/Paper";
 
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import MainProjectCard from "../components/MainProjectCard";
+
+import TechStack from "../components/TechStack";
 
 const ExerciseEngine = {
   title: "Exercise Engine",
   description: "Workout Search Engine",
   image: "/portfolio/images/exengine.jpeg",
   link: "http://3.140.251.0:8080/",
+  technologies: ["python", "js", "html5", "css3", "aws"],
+  longdescription: "Testing",
 };
 
 const EtchSketch = {
@@ -22,6 +27,8 @@ const EtchSketch = {
   description: "Interactive Drawing Tablet",
   image: "/portfolio/images/etchsketch.jpeg",
   link: "https://sharanyadabas.github.io/etch-a-sketch/",
+  technologies: ["js", "html5", "css3", "ocaml"],
+  longdescription: "123",
 };
 
 const Calculator = {
@@ -29,6 +36,8 @@ const Calculator = {
   description: "4 Function Calculator with Floating Point Arithmetic",
   image: "/portfolio/images/calculator.jpeg",
   link: "https://sharanyadabas.github.io/calculator/",
+  technologies: ["js", "html5", "css3"],
+  longdescription: "",
 };
 
 const ExtraProject = {
@@ -36,12 +45,16 @@ const ExtraProject = {
   description: "Id voluptate dolor enim laborum ea ipsum.",
   image: "",
   link: "",
+  technologies: [""],
+  longdescription: "",
 };
 const ExtraProject2 = {
   title: "ExtraProject2",
   description: "Duis aute nulla qui do est amet Lorem officia reprehenderit.",
   image: "",
   link: "",
+  technologies: [""],
+  longdescription: "",
 };
 
 const allProjects = [
@@ -53,27 +66,28 @@ const allProjects = [
 ];
 
 const mainCardVariants = {
-  hidden: { opacity: 0, x: 50 },
+  hidden: { opacity: 0, x: -300 },
   visible: { opacity: 1, x: 0 },
-  exit: { opacity: 0, x: -100 },
+  exit: { opacity: 0, x: 100 },
+};
+
+const techStackVariants = {
+  hidden: { opacity: 0, x: 300 },
+  visible: { opacity: 1, x: 0 },
+  exit: { opacity: 0, x: 100 },
 };
 
 const smallCardVariants = {
-  // Enter from the right
   enter: (direction) => ({
-    x: direction > 0 ? 100 : -100, // Enter from left or right based on direction
+    x: direction > 0 ? 100 : -100,
     opacity: 0,
   }),
-  // Center position with full opacity
   center: {
-    zIndex: 1,
     x: 0,
     opacity: 1,
   },
-  // Exit to the left
   exit: (direction) => ({
-    zIndex: 0,
-    x: direction < 0 ? 100 : -100, // Exit to left or right based on direction
+    x: direction < 0 ? 100 : -100,
     opacity: 0,
   }),
 };
@@ -82,6 +96,7 @@ function Projects() {
   const [pointers, setPointers] = React.useState({ left: 0, right: 3 });
   const [projects, setProjects] = React.useState([]);
   const [mainCard, setMainCard] = React.useState(allProjects[0]);
+  const [mainStack, setMainStack] = React.useState(allProjects[0].technologies);
   const [direction, setDirection] = React.useState(0);
 
   const sliceWrap = (array, start, end) => {
@@ -94,7 +109,9 @@ function Projects() {
 
   const changeMainCard = (project) => {
     console.log("changing main card to ", project.title);
+    console.log("changing main stack to ", project.technologies);
     setMainCard(project);
+    setMainStack(project.technologies);
   };
 
   React.useEffect(() => {
@@ -142,6 +159,26 @@ function Projects() {
             transition={{ type: "spring", stiffness: 30, damping: 10 }}
           >
             <MainProjectCard {...mainCard} />
+          </motion.div>
+          <motion.div
+            key={mainCard.title + "stack"}
+            variants={techStackVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            transition={{ type: "spring", stiffness: 30, damping: 10 }}
+            style={{ height: "100%" }}
+          >
+            <Stack style={{ height: "100%" }} justifyContent="space-between">
+              <Paper
+                square={false}
+                variant="outlined"
+                style={{ height: "200px", background: "inherit" }}
+              >
+                {mainCard.longdescription}
+              </Paper>
+              <TechStack techList={mainStack} />
+            </Stack>
           </motion.div>
         </Stack>
         <Stack direction="row" spacing={7} alignItems="center">

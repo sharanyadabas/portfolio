@@ -14,20 +14,22 @@ export default function MainProjectCard({
   ...props
 }) {
   return (
-    <Card sx={{ width: 600 }} {...props}>
-      <Link to={link} style={{ textDecoration: "none", color: "inherit" }}>
-        <CardActionArea>
-          <CardMedia component="img" height="350" image={image} alt={title} />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              {title}
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              {description}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Link>
-    </Card>
+    <div display="flex">
+      <Card sx={{ width: 600 }} {...props}>
+        <Link to={link} style={{ textDecoration: "none", color: "inherit" }}>
+          <CardActionArea>
+            <CardMedia component="img" height="350" image={image} alt={title} />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                {title}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {description}
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+        </Link>
+      </Card>
+    </div>
   );
 }
