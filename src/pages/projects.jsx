@@ -18,7 +18,7 @@ const ExerciseEngine = {
   description: "Workout Search Engine",
   image: "/portfolio/images/exengine.jpeg",
   link: "http://3.140.251.0:8080/",
-  technologies: ["python", "js", "html5", "css3", "aws"],
+  technologies: ["python", "js", "html5", "css3", "docker", "aws"],
   longdescription: "Testing",
 };
 
@@ -27,7 +27,7 @@ const EtchSketch = {
   description: "Interactive Drawing Tablet",
   image: "/portfolio/images/etchsketch.jpeg",
   link: "https://sharanyadabas.github.io/etch-a-sketch/",
-  technologies: ["js", "html5", "css3", "ocaml"],
+  technologies: ["js", "html5", "css3"],
   longdescription: "123",
 };
 
@@ -169,11 +169,11 @@ function Projects() {
             transition={{ type: "spring", stiffness: 30, damping: 10 }}
             style={{ height: "100%" }}
           >
-            <Stack style={{ height: "100%" }} justifyContent="space-between">
+            <Stack style={{ height: "100%", gap: "2vh", minWidth: "240px" }} justifyContent="space-between">
               <Paper
                 square={false}
                 variant="outlined"
-                style={{ height: "200px", background: "inherit" }}
+                style={{ height: "200px", background: "inherit", flexGrow: "1" }}
               >
                 {mainCard.longdescription}
               </Paper>
