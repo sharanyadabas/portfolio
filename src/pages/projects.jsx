@@ -6,6 +6,7 @@ import Stack from "@mui/material/Stack";
 import IconButton from "@mui/material/IconButton";
 import { motion } from "framer-motion";
 import Paper from "@mui/material/Paper";
+import { styled } from '@mui/material/styles';
 
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
@@ -68,18 +69,16 @@ const allProjects = [
 const mainCardVariants = {
   hidden: { opacity: 0, x: -300 },
   visible: { opacity: 1, x: 0 },
-  exit: { opacity: 0, x: 100 },
 };
 
 const techStackVariants = {
   hidden: { opacity: 0, x: 300 },
   visible: { opacity: 1, x: 0 },
-  exit: { opacity: 0, x: 100 },
 };
 
 const smallCardVariants = {
   enter: (direction) => ({
-    x: direction > 0 ? 100 : -100,
+    x: direction > 0 ? 150 : -150,
     opacity: 0,
   }),
   center: {
@@ -87,10 +86,16 @@ const smallCardVariants = {
     opacity: 1,
   },
   exit: (direction) => ({
-    x: direction < 0 ? 100 : -100,
+    x: direction < 0 ? 150 : -150,
     opacity: 0,
   }),
 };
+
+const StyledPaper = styled(Paper)(({ theme }) => ({
+  padding: theme.spacing(2),
+  ...theme.typography.body2,
+  textAlign: 'left',
+}));
 
 function Projects() {
   const [pointers, setPointers] = React.useState({ left: 0, right: 3 });
@@ -170,13 +175,13 @@ function Projects() {
             style={{ height: "100%" }}
           >
             <Stack style={{ height: "100%", gap: "2vh", minWidth: "240px" }} justifyContent="space-between">
-              <Paper
+              <StyledPaper
                 square={false}
                 variant="outlined"
-                style={{ height: "200px", background: "inherit", flexGrow: "1" }}
+                style={{background: "inherit", flexGrow: "1" }}
               >
                 {mainCard.longdescription}
-              </Paper>
+              </StyledPaper>
               <TechStack techList={mainStack} />
             </Stack>
           </motion.div>

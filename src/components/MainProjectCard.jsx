@@ -15,16 +15,30 @@ export default function MainProjectCard({
 }) {
   return (
     <div display="flex">
-      <Card sx={{ width: 600 }} {...props}>
+      <Card raised={true} sx={{ width: 600 }} {...props}>
         <Link to={link} style={{ textDecoration: "none", color: "inherit" }}>
           <CardActionArea>
-            <CardMedia component="img" height="350" image={image} alt={title} />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
+            <CardMedia component="img" height="300" image={image} alt={title} />
+            <CardContent
+              sx={{
+                color: "text.primary", // Ensures the text color is white
+                paddingLeft: "20px",
+                textAlign: "center"
+              }}
+              >
+              <Typography
+                gutterBottom
+                variant="h3"
+                component="div"
+                sx={{
+                  fontWeight: "bold",
+                  textShadow: "1px 1px 2px black", 
+                  letterSpacing: "0.05em", 
+                  textTransform: "uppercase",
+                  margin: "0px"
+                }}
+              >
                 {title}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {description}
               </Typography>
             </CardContent>
           </CardActionArea>

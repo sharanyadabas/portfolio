@@ -13,10 +13,10 @@ export default function ProjectCard({
   ...props
 }) {
   return (
-    <Card sx={{ width: 260 }} {...props}>
+    <Card raised={true} sx={{ width: 260 }} {...props}>
       <CardActionArea>
         <CardMedia component="img" height="130" image={image} alt={title} />
-        <CardContent>
+        <CardContent sx={{ height: "90px" }}>
           <Typography gutterBottom variant="h5" component="div">
             {title}
           </Typography>

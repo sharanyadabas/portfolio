@@ -121,13 +121,7 @@ export default function ContactCard({
             </IconButton>
           </Tooltip>
           <Tooltip title={phoneNumber}>
-            <IconButton
-              color="inherit"
-              component="a"
-              href="https://www.example.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <IconButton color="inherit">
               <PhoneIcon sx={{ fontSize: `${iconSize}` }} />
             </IconButton>
           </Tooltip>
