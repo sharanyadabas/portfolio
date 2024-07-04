@@ -18,6 +18,7 @@ const ExerciseEngine = {
     "Exercise search engine powered by singular value decomposition to rank similar exercises based on dropdown or ad-hoc queries. Users can also filter exercises by muscle group or equipment.",
   image: "/portfolio/images/exengine.jpeg",
   link: "http://3.140.251.0:8080/",
+  linkgithub: "https://github.com/sharanyadabas/Exercise-Engine-SVD",
   technologies: ["python", "js", "jquery", "html5", "css3", "docker", "aws"],
 };
 
@@ -26,6 +27,7 @@ const EtchSketch = {
   description: "Add github floating button to top right of each project",
   image: "/portfolio/images/etchsketch.jpeg",
   link: "https://sharanyadabas.github.io/etch-a-sketch/",
+  linkgithub: "https://github.com/sharanyadabas/etch-a-sketch",
   technologies: ["js", "html5", "css3"],
 };
 
@@ -34,6 +36,7 @@ const Calculator = {
   description: "4 Function Calculator with Floating Point Arithmetic",
   image: "/portfolio/images/calculator.jpeg",
   link: "https://sharanyadabas.github.io/calculator/",
+  linkgithub: "https://github.com/sharanyadabas/calculator",
   technologies: ["js", "html5", "css3"],
 };
 

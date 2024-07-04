@@ -6,40 +6,65 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import { Link } from "react-router-dom";
 
+import IconButton from "@mui/material/IconButton";
+import GitHubIcon from "@mui/icons-material/GitHub";
+
 export default function MainProjectCard({
   title,
   image,
   link,
+  linkgithub,
   ...props
 }) {
   return (
     <div display="flex">
-      <Card raised={true} sx={{ width: 600, bgcolor: "secondary.main" }} {...props}>
+      <Card
+        raised={true}
+        sx={{ width: 600, bgcolor: "secondary.main" }}
+        {...props}
+      >
         <Link to={link} style={{ textDecoration: "none", color: "inherit" }}>
           <CardActionArea>
-            <CardMedia component="img" height="300" image={image} alt={title} />
-            <CardContent
-              sx={{
-                color: "text.primary",
-                textAlign: "center"
-              }}
-              >
-              <Typography
-                gutterBottom
-                variant="h3"
-                component="div"
-                sx={{
-                  fontWeight: "bold",
-                  letterSpacing: "0.05em", 
-                  textTransform: "uppercase",
-                  margin: "0px"
-                }}
-              >
-                {title}
-              </Typography>
-            </CardContent>
+            <CardMedia
+              component="img"
+              height="300"
+              image={image}
+              alt={title}
+            ></CardMedia>
           </CardActionArea>
         </Link>
+        <CardContent
+          sx={{
+            color: "text.primary",
+            textAlign: "center",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-evenly",
+          }}
+        >
+          <Typography
+            gutterBottom
+            variant="h3"
+            component="div"
+            sx={{
+              fontWeight: "bold",
+              letterSpacing: "0.05em",
+              textTransform: "uppercase",
+              margin: "0px",
+            }}
+          >
+            {title}
+          </Typography>
+          <IconButton
+            color="inherit"
+            component="a"
+            href={linkgithub}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GitHubIcon sx={{ fontSize: "40px" }} />
+          </IconButton>
+        </CardContent>
       </Card>
     </div>
   );

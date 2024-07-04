@@ -13,6 +13,7 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import ThemeContext from "../ThemeContext";
+import ResumePDF from "./ResumePDF";
 
 import { Link } from "react-router-dom";
 
@@ -36,7 +37,7 @@ function ResponsiveAppBar() {
   };
 
   const icon = mode === "dark" ? <DarkModeIcon /> : <LightModeIcon />;
-
+  console.log(pages);
   return (
     <AppBar position="static" sx={{ bgcolor: "primary.main" }}>
       <Container maxWidth="xl">
@@ -84,16 +85,24 @@ function ResponsiveAppBar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Link
-                    to={`/${page.toLowerCase()}`}
-                    style={{ textDecoration: "none", color: "inherit" }}
-                  >
-                    <Typography textAlign="center">{page}</Typography>
-                  </Link>
-                </MenuItem>
-              ))}
+              {pages.map((page) =>
+                page !== "Resume" ? (
+                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    <Link
+                      to={`/${page.toLowerCase()}`}
+                      style={{ textDecoration: "none", color: "inherit" }}
+                    >
+                      <Typography textAlign="center">{page}</Typography>
+                    </Link>
+                  </MenuItem>
+                ) : (
+                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    <ResumePDF resumeLink="/portfolio/sdabas_resume.pdf">
+                      {page}
+                    </ResumePDF>
+                  </MenuItem>
+                )
+              )}
             </Menu>
           </Box>
           <Typography
@@ -114,21 +123,33 @@ function ResponsiveAppBar() {
             DABAS
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Link
-                key={page}
-                to={`/${page.toLowerCase()}`}
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
+            {pages.map((page) =>
+              page !== "Resume" ? (
+                <Link
+                  key={page}
+                  to={`/${page.toLowerCase()}`}
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <Button
+                    key={page}
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 2, color: "white", display: "block" }}
+                  >
+                    {page}
+                  </Button>
+                </Link>
+              ) : (
                 <Button
                   key={page}
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: "white", display: "block" }}
                 >
-                  {page}
+                  <ResumePDF resumeLink="/portfolio/sdabas_resume.pdf">
+                    {page}
+                  </ResumePDF>
                 </Button>
-              </Link>
-            ))}
+              )
+            )}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
