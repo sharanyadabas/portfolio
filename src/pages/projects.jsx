@@ -5,8 +5,6 @@ import ThemeBox from "../components/ThemeBox";
 import Stack from "@mui/material/Stack";
 import IconButton from "@mui/material/IconButton";
 import { motion } from "framer-motion";
-import Paper from "@mui/material/Paper";
-import { styled } from '@mui/material/styles';
 
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
@@ -16,11 +14,11 @@ import TechStack from "../components/TechStack";
 
 const ExerciseEngine = {
   title: "Exercise Engine",
-  description: "Workout Search Engine",
+  description:
+    "Exercise search engine powered by singular value decomposition to rank similar exercises based on dropdown or ad-hoc queries. Users can also filter exercises by muscle group or equipment.",
   image: "/portfolio/images/exengine.jpeg",
   link: "http://3.140.251.0:8080/",
-  technologies: ["python", "js", "html5", "css3", "docker", "aws"],
-  longdescription: "Testing",
+  technologies: ["python", "js", "jquery", "html5", "css3", "docker", "aws"],
 };
 
 const EtchSketch = {
@@ -29,7 +27,6 @@ const EtchSketch = {
   image: "/portfolio/images/etchsketch.jpeg",
   link: "https://sharanyadabas.github.io/etch-a-sketch/",
   technologies: ["js", "html5", "css3"],
-  longdescription: "123",
 };
 
 const Calculator = {
@@ -38,7 +35,6 @@ const Calculator = {
   image: "/portfolio/images/calculator.jpeg",
   link: "https://sharanyadabas.github.io/calculator/",
   technologies: ["js", "html5", "css3"],
-  longdescription: "",
 };
 
 const ExtraProject = {
@@ -47,7 +43,6 @@ const ExtraProject = {
   image: "",
   link: "",
   technologies: [""],
-  longdescription: "",
 };
 const ExtraProject2 = {
   title: "ExtraProject2",
@@ -55,7 +50,6 @@ const ExtraProject2 = {
   image: "",
   link: "",
   technologies: [""],
-  longdescription: "",
 };
 
 const allProjects = [
@@ -90,12 +84,6 @@ const smallCardVariants = {
     opacity: 0,
   }),
 };
-
-const StyledPaper = styled(Paper)(({ theme }) => ({
-  padding: theme.spacing(2),
-  ...theme.typography.body2,
-  textAlign: 'left',
-}));
 
 function Projects() {
   const [pointers, setPointers] = React.useState({ left: 0, right: 3 });
@@ -142,7 +130,6 @@ function Projects() {
     setPointers({ left: leftPointer, right: rightPointer });
     setDirection(-1);
   };
-
   return (
     <div style={{ height: "100vh", display: "flex", flexDirection: "column" }}>
       <ResponsiveAppBar />
@@ -174,14 +161,25 @@ function Projects() {
             transition={{ type: "spring", stiffness: 30, damping: 10 }}
             style={{ height: "100%" }}
           >
-            <Stack style={{ height: "100%", gap: "2vh", minWidth: "240px" }} justifyContent="space-between">
-              <StyledPaper
-                square={false}
-                variant="outlined"
-                style={{background: "inherit", flexGrow: "1" }}
+            <Stack
+              style={{
+                height: "100%",
+                gap: "2vh",
+                minWidth: "240px",
+                maxWidth: "300px",
+              }}
+              justifyContent="space-between"
+            >
+              <ThemeBox
+                sx={{
+                  flexGrow: "1",
+                  fontSize: "18px",
+                  display: "flex",
+                  alignItems: "center",
+                }}
               >
-                {mainCard.longdescription}
-              </StyledPaper>
+                {mainCard.description}
+              </ThemeBox>
               <TechStack techList={mainStack} />
             </Stack>
           </motion.div>

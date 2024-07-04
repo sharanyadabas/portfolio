@@ -25,7 +25,7 @@ export default function ContactCard({
   phoneNumber,
   ...props
 }) {
-  const iconSize = "40px";
+  const iconSize = "50px";
   return (
     <Card
       sx={{
@@ -36,6 +36,8 @@ export default function ContactCard({
         alignItems: "center",
         bgcolor: "primary.main",
         backgroundImage: "none !important",
+        border: "5px solid",
+        borderColor: "primary.main",
       }}
       raised={true}
       {...props}
@@ -75,16 +77,16 @@ export default function ContactCard({
           gutterBottom
           variant="h4"
           component="div"
-          sx={{ marginTop: "100px", flexGrow: "0" }}
+          sx={{ marginTop: "100px", flexGrow: "0", fontSize: "40px" }}
         >
           {name}
         </Typography>
-        <Typography variant="body1" color="text.primary">
+        <Typography variant="body1" color="text.primary" sx={{fontSize: "18px"}}>
           {description}
         </Typography>
         <Stack
           direction="row"
-          spacing={2}
+          spacing={3}
           justifyContent="center"
           alignItems="center"
           sx={{ flexGrow: "1" }}

@@ -35,7 +35,7 @@ function ResponsiveAppBar() {
     console.log(mode);
   };
 
-  const icon = mode == "dark" ? <DarkModeIcon /> : <LightModeIcon />;
+  const icon = mode === "dark" ? <DarkModeIcon /> : <LightModeIcon />;
 
   return (
     <AppBar position="static" sx={{ bgcolor: "primary.main" }}>

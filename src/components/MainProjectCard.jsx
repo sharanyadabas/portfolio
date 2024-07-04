@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 
 export default function MainProjectCard({
   title,
-  description,
   image,
   link,
   ...props
