@@ -20,7 +20,7 @@ const pages = ["Home", "Resume", "Projects", "Contact"];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const { theme, setTheme } = React.useContext(ThemeContext);
+  const { mode, setMode } = React.useContext(ThemeContext);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -31,14 +31,14 @@ function ResponsiveAppBar() {
   };
 
   const toggleTheme = () => {
-    setTheme(!theme);
-    console.log(theme);
+    setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
+    console.log(mode);
   };
 
-  const icon = theme ? <DarkModeIcon /> : <LightModeIcon />;
+  const icon = mode == "dark" ? <DarkModeIcon /> : <LightModeIcon />;
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ bgcolor: "primary.main" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography

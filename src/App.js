@@ -1,10 +1,10 @@
+import React from "react";
 import { useState } from "react";
 import "./App.css";
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
-
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import ThemeContext from "./ThemeContext";
@@ -20,42 +20,34 @@ import Resume from "./pages/resume";
 import Projects from "./pages/projects";
 import Contact from "./pages/contact";
 
+const getDesignTokens = (mode) => ({
+  palette: {
+    mode,
+    ...(mode === "light"
+      ? {
+          primary: { main: "#25326a" },
+          secondary: { main: "#818eda" },
+          background: { default: "#f5f7fa" },
+          text: { primary: "#0f121f", secondary: "#e0e3f0" },
+        }
+      : {
+          primary: { main: "#95a2da" },
+          secondary: { main: "#25327e" },
+          background: { default: "#05070a" },
+          text: { primary: "#e0e3f0", secondary: "#0f121f" },
+        }),
+  },
+});
+
 function App() {
-  const [theme, setTheme] = useState(false);
+  const [mode, setMode] = useState("dark");
 
-  const lightPalette = {
-    primary: { main: "#563410" },
-    secondary: { main: "#af8f6e" },
-    error: { main: "#b00020" },
-    background: { default: "#fbe9d5" },
-    text: { primary: "#2a1804", secondary: "#76522e" },
-  };
-
-  const darkPalette = {
-    primary: { main: "#efcda9" },
-    secondary: { main: "#917050" },
-    error: { main: "#cf6679" },
-    background: { default: "#2a1804" },
-    text: { primary: "#fbe9d5", secondary: "#d1ad89" },
-  };
-
-  const selectedPalette = theme ? darkPalette : lightPalette;
-
-  const appTheme = createTheme({
-    palette: {
-      mode: theme ? "dark" : "light",
-      primary: selectedPalette.primary,
-      secondary: selectedPalette.secondary,
-      error: selectedPalette.error,
-      background: selectedPalette.background,
-      text: selectedPalette.text,
-    },
-  });
+  const theme = React.useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
 
   return (
     <Router>
-      <ThemeContext.Provider value={{ theme, setTheme }}>
-        <ThemeProvider theme={appTheme}>
+      <ThemeContext.Provider value={{ mode, setMode }}>
+        <ThemeProvider theme={theme}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Navigate to="/" replace />} />

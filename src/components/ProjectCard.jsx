@@ -13,15 +13,21 @@ export default function ProjectCard({
   ...props
 }) {
   return (
-    <Card raised={true} sx={{ width: 260 }} {...props}>
+    <Card
+      raised={true}
+      sx={{ width: 280, bgcolor: "secondary.main" }}
+      {...props}
+    >
       <CardActionArea>
-        <CardMedia component="img" height="130" image={image} alt={title} />
-        <CardContent sx={{ height: "90px" }}>
-          <Typography gutterBottom variant="h5" component="div">
+        <CardMedia component="img" height="150" image={image} alt={title} />
+        <CardContent sx={{ height: "30px", textAlign: "center" }}>
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="div"
+            sx={{ margin: "0px", fontWeight: "bold" }}
+          >
             {title}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {description}
           </Typography>
         </CardContent>
       </CardActionArea>

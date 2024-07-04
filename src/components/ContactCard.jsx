@@ -34,6 +34,8 @@ export default function ContactCard({
         flexDirection: "column",
         position: "relative",
         alignItems: "center",
+        bgcolor: "primary.main",
+        backgroundImage: "none !important",
       }}
       raised={true}
       {...props}
@@ -54,8 +56,8 @@ export default function ContactCard({
           transform: "translateY(-50%)",
           width: "160px",
           height: "160px",
-          color: "inherit",
-          border: "solid 5px currentColor",
+          border: "10px solid",
+          borderColor: "primary.main",
         }}
       />
       <CardContent
@@ -73,11 +75,11 @@ export default function ContactCard({
           gutterBottom
           variant="h4"
           component="div"
-          sx={{ marginTop: "110px", flexGrow: "0" }}
+          sx={{ marginTop: "100px", flexGrow: "0" }}
         >
           {name}
         </Typography>
-        <Typography variant="body1" color="text.secondary">
+        <Typography variant="body1" color="text.primary">
           {description}
         </Typography>
         <Stack

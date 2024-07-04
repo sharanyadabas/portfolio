@@ -15,14 +15,13 @@ export default function MainProjectCard({
 }) {
   return (
     <div display="flex">
-      <Card raised={true} sx={{ width: 600 }} {...props}>
+      <Card raised={true} sx={{ width: 600, bgcolor: "secondary.main" }} {...props}>
         <Link to={link} style={{ textDecoration: "none", color: "inherit" }}>
           <CardActionArea>
             <CardMedia component="img" height="300" image={image} alt={title} />
             <CardContent
               sx={{
-                color: "text.primary", // Ensures the text color is white
-                paddingLeft: "20px",
+                color: "text.primary",
                 textAlign: "center"
               }}
               >
@@ -32,7 +31,6 @@ export default function MainProjectCard({
                 component="div"
                 sx={{
                   fontWeight: "bold",
-                  textShadow: "1px 1px 2px black", 
                   letterSpacing: "0.05em", 
                   textTransform: "uppercase",
                   margin: "0px"
