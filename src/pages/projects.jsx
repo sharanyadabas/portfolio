@@ -23,7 +23,7 @@ const ExerciseEngine = {
 
 const EtchSketch = {
   title: "Etch-a-Sketch",
-  description: "Interactive Drawing Tablet",
+  description: "Add github floating button to top right of each project",
   image: "/portfolio/images/etchsketch.jpeg",
   link: "https://sharanyadabas.github.io/etch-a-sketch/",
   technologies: ["js", "html5", "css3"],
