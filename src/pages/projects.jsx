@@ -146,7 +146,7 @@ function Projects() {
   };
   return (
     <div style={{ height: "100vh", display: "flex", flexDirection: "column" }}>
-      <ResponsiveAppBar />
+      <ResponsiveAppBar currentPage={"Projects"} />
       <ThemeBox
         display="flex"
         flexDirection="column"
@@ -200,8 +200,7 @@ function Projects() {
         </Stack>
         <Stack direction="row" spacing={7} alignItems="center">
           <IconButton
-            color="inherit"
-            sx={{ width: 60, height: 60 }}
+            sx={{ width: 60, height: 60, color: "primary.main" }}
             onClick={shiftProjectsLeft}
           >
             <KeyboardArrowLeftIcon sx={{ fontSize: 70 }} />
@@ -224,8 +223,7 @@ function Projects() {
             </motion.div>
           ))}
           <IconButton
-            color="inherit"
-            sx={{ width: 60, height: 60 }}
+            sx={{ width: 60, height: 60, color: "primary.main" }}
             onClick={shiftProjectsRight}
           >
             <KeyboardArrowRightIcon sx={{ fontSize: 70 }} />

@@ -5,7 +5,7 @@ import ThemeBox from "../components/ThemeBox";
 function Home() {
   return (
     <div style={{ height: "100vh", display: "flex", flexDirection: "column" }}>
-      <ResponsiveAppBar />
+      <ResponsiveAppBar currentPage={"Resume"}/>
       <ThemeBox
         display="flex"
         flexDirection="column"

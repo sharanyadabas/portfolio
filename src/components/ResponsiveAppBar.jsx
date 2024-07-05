@@ -19,27 +19,27 @@ import { styled } from "@mui/material/styles";
 
 const pages = ["Home", "Resume", "Projects", "Contact"];
 
-const CustomizedButton = styled(Button)(({ theme }) => ({
+const CustomizedButton = styled(Button)(({ theme, currentPage }) => ({
   "&:before": {
     content: '""',
     position: "absolute",
-    width: "0",
+    width: currentPage ? "40%" : "0",
     height: "4px",
     bottom: "2px",
     left: "50%",
     transform: "translate(-50%)",
     backgroundColor: theme.palette.secondary.main,
     transformOrigin: "center",
-    visibility: "hidden",
+    visibility: currentPage ? "visible" : "hidden",
     transition: "all 0.3s ease-in-out",
   },
   "&:hover:before": {
     visibility: "visible",
-    width: "85%",
+    width: "80%",
   },
 }));
 
-function ResponsiveAppBar() {
+function ResponsiveAppBar({ currentPage }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const { mode, setMode } = React.useContext(ThemeContext);
 
@@ -59,7 +59,10 @@ function ResponsiveAppBar() {
   const icon = mode === "dark" ? <DarkModeIcon /> : <LightModeIcon />;
   console.log(pages);
   return (
-    <AppBar position="static" sx={{ bgcolor: "primary.main", color: "#f5f7fa" }}>
+    <AppBar
+      position="static"
+      sx={{ bgcolor: "primary.main", color: "#f5f7fa" }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -152,6 +155,7 @@ function ResponsiveAppBar() {
                 >
                   <CustomizedButton
                     key={page}
+                    currentPage={currentPage === page}
                     onClick={handleCloseNavMenu}
                     sx={{ my: 2, color: "#f5f7fa", display: "block" }}
                   >
@@ -161,6 +165,7 @@ function ResponsiveAppBar() {
               ) : (
                 <CustomizedButton
                   key={page}
+                  currentPage={currentPage === page}
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: "#f5f7fa", display: "block" }}
                 >
