@@ -14,10 +14,30 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import ThemeContext from "../ThemeContext";
 import ResumePDF from "./ResumePDF";
-
 import { Link } from "react-router-dom";
+import { styled } from "@mui/material/styles";
 
 const pages = ["Home", "Resume", "Projects", "Contact"];
+
+const CustomizedButton = styled(Button)(({ theme }) => ({
+  "&:before": {
+    content: '""',
+    position: "absolute",
+    width: "0",
+    height: "4px",
+    bottom: "2px",
+    left: "50%",
+    transform: "translate(-50%)",
+    backgroundColor: theme.palette.secondary.main,
+    transformOrigin: "center",
+    visibility: "hidden",
+    transition: "all 0.3s ease-in-out",
+  },
+  "&:hover:before": {
+    visibility: "visible",
+    width: "85%",
+  },
+}));
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -39,7 +59,7 @@ function ResponsiveAppBar() {
   const icon = mode === "dark" ? <DarkModeIcon /> : <LightModeIcon />;
   console.log(pages);
   return (
-    <AppBar position="static" sx={{ bgcolor: "primary.main" }}>
+    <AppBar position="static" sx={{ bgcolor: "primary.main", color: "#f5f7fa" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -130,24 +150,24 @@ function ResponsiveAppBar() {
                   to={`/${page.toLowerCase()}`}
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
-                  <Button
+                  <CustomizedButton
                     key={page}
                     onClick={handleCloseNavMenu}
-                    sx={{ my: 2, color: "white", display: "block" }}
+                    sx={{ my: 2, color: "#f5f7fa", display: "block" }}
                   >
                     {page}
-                  </Button>
+                  </CustomizedButton>
                 </Link>
               ) : (
-                <Button
+                <CustomizedButton
                   key={page}
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
+                  sx={{ my: 2, color: "#f5f7fa", display: "block" }}
                 >
                   <ResumePDF resumeLink="/portfolio/sdabas_resume.pdf">
                     {page}
                   </ResumePDF>
-                </Button>
+                </CustomizedButton>
               )
             )}
           </Box>

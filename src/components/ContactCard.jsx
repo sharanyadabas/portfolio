@@ -26,6 +26,7 @@ export default function ContactCard({
   ...props
 }) {
   const iconSize = "50px";
+  const fontColor = "#f5f7fa";
   return (
     <Card
       sx={{
@@ -77,11 +78,12 @@ export default function ContactCard({
           gutterBottom
           variant="h4"
           component="div"
+          color={fontColor}
           sx={{ marginTop: "100px", flexGrow: "0", fontSize: "40px" }}
         >
           {name}
         </Typography>
-        <Typography variant="body1" color="text.primary" sx={{fontSize: "18px"}}>
+        <Typography variant="body1" color={fontColor} sx={{ fontSize: "18px" }}>
           {description}
         </Typography>
         <Stack
@@ -93,39 +95,39 @@ export default function ContactCard({
         >
           <Tooltip title={linkLinkedin}>
             <IconButton
-              color="inherit"
               component="a"
               href={linkLinkedin}
               target="_blank"
               rel="noopener noreferrer"
+              sx={{ color: `${fontColor}` }}
             >
               <LinkedInIcon sx={{ fontSize: `${iconSize}` }} />
             </IconButton>
           </Tooltip>
           <Tooltip title={linkGithub}>
             <IconButton
-              color="inherit"
               component="a"
               href={linkGithub}
               target="_blank"
               rel="noopener noreferrer"
+              sx={{ color: `${fontColor}` }}
             >
               <GitHubIcon sx={{ fontSize: `${iconSize}` }} />
             </IconButton>
           </Tooltip>
           <Tooltip title={linkEmail}>
             <IconButton
-              color="inherit"
               component="a"
               href={`mailto:${linkEmail}`}
               target="_blank"
               rel="noopener noreferrer"
+              sx={{ color: `${fontColor}` }}
             >
               <EmailIcon sx={{ fontSize: `${iconSize}` }} />
             </IconButton>
           </Tooltip>
           <Tooltip title={phoneNumber}>
-            <IconButton color="inherit">
+            <IconButton sx={{ color: `${fontColor}` }}>
               <PhoneIcon sx={{ fontSize: `${iconSize}` }} />
             </IconButton>
           </Tooltip>
