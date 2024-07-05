@@ -20,12 +20,18 @@ export default function ProjectCard({
     >
       <CardActionArea>
         <CardMedia component="img" height="150" image={image} alt={title} />
-        <CardContent sx={{ height: "30px", textAlign: "center" }}>
+        <CardContent
+          sx={{
+            height: "30px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <Typography
             gutterBottom
-            variant="h5"
             component="div"
-            sx={{ margin: "0px", fontWeight: "bold" }}
+            sx={{ margin: "0px", fontWeight: "bold", fontSize: "35px" }}
           >
             {title}
           </Typography>

@@ -21,6 +21,16 @@ import Projects from "./pages/projects";
 import Contact from "./pages/contact";
 
 const getDesignTokens = (mode) => ({
+  typography: {
+    fontFamily: [
+      'Source Sans Pro',
+      'roboto',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+  },
   palette: {
     mode,
     ...(mode === "light"

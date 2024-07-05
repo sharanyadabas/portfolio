@@ -20,7 +20,10 @@ export default function MainProjectCard({
     <div display="flex">
       <Card
         raised={true}
-        sx={{ width: 600, bgcolor: "secondary.main" }}
+        sx={{
+          width: 600,
+          bgcolor: "secondary.main",
+        }}
         {...props}
       >
         <Link to={link} style={{ textDecoration: "none", color: "inherit" }}>
@@ -40,17 +43,18 @@ export default function MainProjectCard({
             display: "flex",
             alignItems: "center",
             justifyContent: "space-evenly",
+            paddingBottom: "16px !important",
           }}
         >
           <Typography
             gutterBottom
-            variant="h3"
             component="div"
             sx={{
               fontWeight: "bold",
               letterSpacing: "0.05em",
               textTransform: "uppercase",
               margin: "0px",
+              fontSize: "50px",
             }}
           >
             {title}
