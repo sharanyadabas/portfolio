@@ -15,11 +15,20 @@ import TechStack from "../components/TechStack";
 const ExerciseEngine = {
   title: "Exercise Engine",
   description:
-    "Exercise search engine powered by singular value decomposition to rank similar exercises based on dropdown or ad-hoc queries. Users can also filter exercises by muscle group or equipment.",
+    "Exercise search engine that is powered by single value decomposition on exercise descriptions to rank similarities between different exercises. Users can query via dropdown or ad-hoc search and use filters on muscle groups or equipment.",
   image: "/portfolio/images/exengine.jpeg",
   link: "http://3.140.251.0:8080/",
   linkgithub: "https://github.com/sharanyadabas/Exercise-Engine-SVD",
-  technologies: ["python", "js", "jquery", "html5", "css3", "docker", "aws"],
+  technologies: [
+    "python",
+    "flask",
+    "javascript",
+    "jquery",
+    "html5",
+    "css3",
+    "docker",
+    "amazonwebservices",
+  ],
 };
 
 const EtchSketch = {
@@ -28,7 +37,7 @@ const EtchSketch = {
   image: "/portfolio/images/etchsketch.jpeg",
   link: "https://sharanyadabas.github.io/etch-a-sketch/",
   linkgithub: "https://github.com/sharanyadabas/etch-a-sketch",
-  technologies: ["js", "html5", "css3"],
+  technologies: ["javascript", "html5", "css3"],
 };
 
 const Calculator = {
@@ -37,22 +46,24 @@ const Calculator = {
   image: "/portfolio/images/calculator.jpeg",
   link: "https://sharanyadabas.github.io/calculator/",
   linkgithub: "https://github.com/sharanyadabas/calculator",
-  technologies: ["js", "html5", "css3"],
+  technologies: ["javascript", "html5", "css3"],
 };
 
 const ExtraProject = {
   title: "ExtraProject",
   description: "Id voluptate dolor enim laborum ea ipsum.",
-  image: "",
-  link: "",
-  technologies: [""],
+  image: "/portfolio/images/template.jpg",
+  link: "https://www.example.com/",
+  linkgithub: "https://github.com/sharanyadabas/",
+  technologies: ["ocaml", "c"],
 };
 const ExtraProject2 = {
   title: "ExtraProject2",
   description: "Duis aute nulla qui do est amet Lorem officia reprehenderit.",
-  image: "",
-  link: "",
-  technologies: [""],
+  image: "/portfolio/images/template.jpg",
+  link: "https://www.example.com/",
+  linkgithub: "https://github.com/sharanyadabas/",
+  technologies: ["nextjs", "react", "materialui"],
 };
 
 const allProjects = [
