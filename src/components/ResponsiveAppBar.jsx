@@ -52,7 +52,9 @@ function ResponsiveAppBar({ currentPage, buttonAnimation }) {
   };
 
   const toggleTheme = () => {
-    buttonAnimation();
+    if (buttonAnimation !== undefined) {
+      buttonAnimation();
+    }
     setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
   };
 

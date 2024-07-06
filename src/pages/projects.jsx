@@ -115,8 +115,6 @@ function Projects() {
   };
 
   const changeMainCard = (project) => {
-    console.log("changing main card to ", project.title);
-    console.log("changing main stack to ", project.technologies);
     setMainCard(project);
     setMainStack(project.technologies);
   };
