@@ -39,7 +39,7 @@ const CustomizedButton = styled(Button)(({ theme, currentPage }) => ({
   },
 }));
 
-function ResponsiveAppBar({ currentPage }) {
+function ResponsiveAppBar({ currentPage, buttonAnimation }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const { mode, setMode } = React.useContext(ThemeContext);
 
@@ -52,12 +52,11 @@ function ResponsiveAppBar({ currentPage }) {
   };
 
   const toggleTheme = () => {
+    buttonAnimation();
     setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
-    console.log(mode);
   };
 
   const icon = mode === "dark" ? <DarkModeIcon /> : <LightModeIcon />;
-  console.log(pages);
   return (
     <AppBar
       position="static"

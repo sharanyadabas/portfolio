@@ -13,7 +13,7 @@ function Contact() {
 
   return (
     <div style={{ height: "100vh", display: "flex", flexDirection: "column" }}>
-      <ResponsiveAppBar currentPage={"Contact"} />
+      <ResponsiveAppBar currentpage={"Contact"} />
       <ThemeBox
         display="flex"
         flexDirection="column"

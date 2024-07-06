@@ -146,7 +146,7 @@ function Projects() {
   };
   return (
     <div style={{ height: "100vh", display: "flex", flexDirection: "column" }}>
-      <ResponsiveAppBar currentPage={"Projects"} />
+      <ResponsiveAppBar currentpage={"Projects"} />
       <ThemeBox
         display="flex"
         flexDirection="column"
