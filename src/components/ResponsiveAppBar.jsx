@@ -17,13 +17,13 @@ import ResumePDF from "./ResumePDF";
 import { Link } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 
-const pages = ["Home", "Resume", "Projects", "Contact"];
+const pages = ["Home", "Projects", "Resume", "Contact"];
 
 const CustomizedButton = styled(Button)(({ theme, currentPage }) => ({
   "&:before": {
     content: '""',
     position: "absolute",
-    width: currentPage ? "40%" : "0",
+    width: currentPage ? "80%" : "0",
     height: "4px",
     bottom: "2px",
     left: "50%",
