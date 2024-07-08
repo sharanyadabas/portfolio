@@ -60,7 +60,7 @@ function Home() {
             flexDirection: "column",
             justifyContent: "space-between",
             boxShadow:
-              "0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);",
+              "0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);",
           }}
         >
           <Typography
@@ -68,7 +68,7 @@ function Home() {
           >
             Hi!
           </Typography>
-          <Stack direction="column" justifyContent="center" spacing={3}>
+          <Stack direction="column" justifyContent="center" spacing={4}>
             <Typography sx={{ fontSize: "1.3em" }}>
               I'm Sharanya, a passionate fullstack developer with a keen
               interest in exploring various fields such as machine learning,
@@ -85,7 +85,7 @@ function Home() {
               through interactive technology.
             </Typography>
             <Typography sx={{ fontSize: "1.3em" }}>
-              I am eagerly seeking internship opportunities for summer 2025 to
+              I am eagerly seeking internship opportunities for Summer 2025 to
               further develop my expertise and contribute to innovative
               projects.
             </Typography>

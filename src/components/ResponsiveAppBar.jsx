@@ -66,23 +66,6 @@ function ResponsiveAppBar({ currentPage, buttonAnimation }) {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            sx={{
-              mr: 3,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            DABAS
-          </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -129,24 +112,8 @@ function ResponsiveAppBar({ currentPage, buttonAnimation }) {
               )}
             </Menu>
           </Box>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            sx={{
-              mr: 3,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            DABAS
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex", gap: "0.5vw" } }}>
             {pages.map((page) =>
               page !== "Resume" ? (
                 <Link
@@ -160,7 +127,17 @@ function ResponsiveAppBar({ currentPage, buttonAnimation }) {
                     onClick={handleCloseNavMenu}
                     sx={{ my: 2, color: "#f5f7fa", display: "block" }}
                   >
-                    {page}
+                    <Typography
+                      noWrap
+                      component="a"
+                      sx={{
+                        fontSize: "1.1rem",
+                        fontWeight: 700,
+                        letterSpacing: ".15rem",
+                      }}
+                    >
+                      {page}
+                    </Typography>
                   </CustomizedButton>
                 </Link>
               ) : (
@@ -171,7 +148,17 @@ function ResponsiveAppBar({ currentPage, buttonAnimation }) {
                   sx={{ my: 2, color: "#f5f7fa", display: "block" }}
                 >
                   <ResumePDF resumeLink="/portfolio/sdabas_resume.pdf">
-                    {page}
+                    <Typography
+                      noWrap
+                      component="a"
+                      sx={{
+                        fontSize: "1.1rem",
+                        fontWeight: 700,
+                        letterSpacing: ".15rem",
+                      }}
+                    >
+                      {page}
+                    </Typography>
                   </ResumePDF>
                 </CustomizedButton>
               )

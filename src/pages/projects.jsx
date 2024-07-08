@@ -31,9 +31,40 @@ const ExerciseEngine = {
   ],
 };
 
+const DoodleJump = {
+  title: "Embedded Jump",
+  description:
+    "Game controller using the FRDM-KL46Z microcontroller, leveraging its onboard accelerometer to detect tilt direction and acceleration. The controller interfaces with Python via a UART connection, enabling users to play a Pygame version of Doodle Jump with snappy, motion-based controls.",
+  image: "/portfolio/images/embeddedjump.png",
+  link: "https://pages.github.coecis.cornell.edu/ece3140-sp2024/mwm223-sd699/",
+  linkgithub: "",
+  technologies: ["c", "python"],
+};
+
+const CamlCapital = {
+  title: "Caml Capital",
+  description:
+    "Functional programming approach to Monopoly, brought to life as a terminal-based multiplayer game. Using functional paradigms, it supports buying properties, houses, and hotels, as well as all community chest and chance spaces for a complete Monopoly experience.",
+  image: "/portfolio/images/camlcapital.jpg",
+  link: "",
+  linkgithub: "https://github.com/sharanyadabas/cs3110-final-project/",
+  technologies: ["ocaml"],
+};
+
+const Portfolio = {
+  title: "Portfolio",
+  description:
+    "Portfolio website that allows viewers to interact with my projects and provides relevant information about me as a developer. Created from scratch to practice working with React Hooks and MaterialUI ",
+  image: "/portfolio/images/portfolio.png",
+  link: "",
+  linkgithub: "https://github.com/sharanyadabas/portfolio",
+  technologies: ["react", "materialui", "javascript"],
+};
+
 const EtchSketch = {
   title: "Etch-a-Sketch",
-  description: "Add github floating button to top right of each project",
+  description:
+    "Interactive drawing tablet that features a resizable canvas. Allows for users to pick from greyscale, color, drag, and hover modes. Note: To begin, must select both a color and drawing mode",
   image: "/portfolio/images/etchsketch.jpeg",
   link: "https://sharanyadabas.github.io/etch-a-sketch/",
   linkgithub: "https://github.com/sharanyadabas/etch-a-sketch",
@@ -42,36 +73,21 @@ const EtchSketch = {
 
 const Calculator = {
   title: "Calculator",
-  description: "4 Function Calculator with Floating Point Arithmetic",
+  description:
+    "4 function calculator that supports floating point arithmetic. Has a memory feature that allows for users to execute continuous operations on a value",
   image: "/portfolio/images/calculator.jpeg",
   link: "https://sharanyadabas.github.io/calculator/",
   linkgithub: "https://github.com/sharanyadabas/calculator",
   technologies: ["javascript", "html5", "css3"],
 };
 
-const ExtraProject = {
-  title: "ExtraProject",
-  description: "Id voluptate dolor enim laborum ea ipsum.",
-  image: "/portfolio/images/template.jpg",
-  link: "https://www.example.com/",
-  linkgithub: "https://github.com/sharanyadabas/",
-  technologies: ["ocaml", "c"],
-};
-const ExtraProject2 = {
-  title: "ExtraProject2",
-  description: "Duis aute nulla qui do est amet Lorem officia reprehenderit.",
-  image: "/portfolio/images/template.jpg",
-  link: "https://www.example.com/",
-  linkgithub: "https://github.com/sharanyadabas/",
-  technologies: ["nextjs", "react", "materialui"],
-};
-
 const allProjects = [
   ExerciseEngine,
+  DoodleJump,
+  CamlCapital,
+  Portfolio,
   EtchSketch,
   Calculator,
-  ExtraProject,
-  ExtraProject2,
 ];
 
 const mainCardVariants = {
@@ -178,16 +194,24 @@ function Projects() {
                 height: "100%",
                 gap: "2vh",
                 minWidth: "240px",
-                maxWidth: "300px",
+                maxWidth: "360px",
               }}
               justifyContent="space-between"
             >
               <ThemeBox
                 sx={{
-                  flexGrow: "1",
-                  fontSize: "18px",
                   display: "flex",
-                  alignItems: "center",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  padding: "20px 20px 20px 20px",
+                  fontSize: "18px",
+                  color: "#f5f7fa",
+                  backgroundColor: "primary.main",
+                  borderRadius: "20px",
+                  border: "5px solid",
+                  borderColor: "text.primary",
+                  boxShadow:
+                    "0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);",
                 }}
               >
                 {mainCard.description}

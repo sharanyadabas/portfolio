@@ -59,15 +59,17 @@ export default function MainProjectCard({
           >
             {title}
           </Typography>
-          <IconButton
-            color="inherit"
-            component="a"
-            href={linkgithub}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GitHubIcon sx={{ fontSize: "40px" }} />
-          </IconButton>
+          {linkgithub !== "" && (
+            <IconButton
+              color="inherit"
+              component="a"
+              href={linkgithub}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GitHubIcon sx={{ fontSize: "40px" }} />
+            </IconButton>
+          )}
         </CardContent>
       </Card>
     </div>

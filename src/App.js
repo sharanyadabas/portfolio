@@ -59,8 +59,8 @@ function App() {
       <ThemeContext.Provider value={{ mode, setMode }}>
         <ThemeProvider theme={theme}>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Navigate to="/" replace />} />
+            <Route path="/portfolio" element={<Home />} />
+            <Route path="/home" element={<Navigate to="/portfolio" replace />} />
             <Route path="/resume" element={<Resume />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />

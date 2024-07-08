@@ -31,7 +31,7 @@ export default function ProjectCard({
           <Typography
             gutterBottom
             component="div"
-            sx={{ margin: "0px", fontWeight: "bold", fontSize: "35px" }}
+            sx={{ margin: "0px", fontWeight: "bold", fontSize: "32px" }}
           >
             {title}
           </Typography>
