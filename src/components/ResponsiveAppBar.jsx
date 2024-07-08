@@ -19,7 +19,9 @@ import { styled } from "@mui/material/styles";
 
 const pages = ["Home", "Projects", "Resume", "Contact"];
 
-const CustomizedButton = styled(Button)(({ theme, currentPage }) => ({
+const CustomizedButton = styled(Button, {
+  shouldForwardProp: (prop) => prop !== "currentPage",
+})(({ theme, currentPage }) => ({
   "&:before": {
     content: '""',
     position: "absolute",
@@ -134,7 +136,6 @@ function ResponsiveAppBar({ currentPage, buttonAnimation }) {
                   >
                     <Typography
                       noWrap
-                      component="a"
                       sx={{
                         fontSize: "1.1rem",
                         fontWeight: 700,
@@ -155,7 +156,6 @@ function ResponsiveAppBar({ currentPage, buttonAnimation }) {
                   <ResumePDF resumeLink="/sdabas_resume.pdf">
                     <Typography
                       noWrap
-                      component="a"
                       sx={{
                         fontSize: "1.1rem",
                         fontWeight: 700,

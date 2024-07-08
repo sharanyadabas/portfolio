@@ -159,7 +159,14 @@ function Projects() {
     setDirection(-1);
   };
   return (
-    <div style={{ height: "100vh", display: "flex", flexDirection: "column" }}>
+    <div
+      style={{
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        overflowX: "hidden",
+      }}
+    >
       <ResponsiveAppBar currentpage={"Projects"} />
       <ThemeBox
         display="flex"
@@ -168,6 +175,7 @@ function Projects() {
         justifyContent="center"
         flexGrow="1"
         gap="5vh"
+        maxWidth="100vw"
       >
         <Stack direction="row" alignItems="center" gap="3vw">
           <motion.div
