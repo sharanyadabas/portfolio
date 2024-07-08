@@ -23,13 +23,13 @@ import Contact from "./pages/contact";
 const getDesignTokens = (mode) => ({
   typography: {
     fontFamily: [
-      'Source Sans Pro',
-      'roboto',
-      'sans-serif',
+      "Source Sans Pro",
+      "roboto",
+      "sans-serif",
       '"Apple Color Emoji"',
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
-    ].join(','),
+    ].join(","),
   },
   palette: {
     mode,
@@ -59,8 +59,8 @@ function App() {
       <ThemeContext.Provider value={{ mode, setMode }}>
         <ThemeProvider theme={theme}>
           <Routes>
-            <Route path="/portfolio" element={<Home />} />
-            <Route path="/home" element={<Navigate to="/portfolio" replace />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Navigate to="/" replace />} />
             <Route path="/resume" element={<Resume />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />

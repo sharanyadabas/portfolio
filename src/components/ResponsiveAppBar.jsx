@@ -113,7 +113,12 @@ function ResponsiveAppBar({ currentPage, buttonAnimation }) {
             </Menu>
           </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex", gap: "0.5vw" } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex", gap: "0.5vw" },
+            }}
+          >
             {pages.map((page) =>
               page !== "Resume" ? (
                 <Link
