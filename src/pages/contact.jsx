@@ -27,8 +27,8 @@ function Contact() {
             <ContactCard
               name={"Sharanya Dabas"}
               description={"Aspiring Software Engineer"}
-              headerImage={"/portfolio/images/cornell-banner.jpg"}
-              image={"/portfolio/images/headshot.jpg"}
+              headerImage={"/images/cornell-banner.jpg"}
+              image={"/images/headshot.jpg"}
               linkEmail={"sd699@cornell.edu"}
               linkLinkedin={"https://www.linkedin.com/in/sharanya-dabas/"}
               linkGithub={"https://github.com/sharanyadabas"}

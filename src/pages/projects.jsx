@@ -16,7 +16,7 @@ const ExerciseEngine = {
   title: "Exercise Engine",
   description:
     "Exercise search engine that is powered by single value decomposition on exercise descriptions to rank similarities between different exercises. Users can query via dropdown or ad-hoc search and use filters on muscle groups or equipment.",
-  image: "/portfolio/images/exengine.jpeg",
+  image: "/images/exengine.jpeg",
   link: "http://3.140.251.0:8080/",
   linkgithub: "https://github.com/sharanyadabas/Exercise-Engine-SVD",
   technologies: [
@@ -35,7 +35,7 @@ const DoodleJump = {
   title: "Embedded Jump",
   description:
     "Game controller using the FRDM-KL46Z microcontroller, leveraging its onboard accelerometer to detect tilt direction and acceleration. The controller interfaces with Python via a UART connection, enabling users to play a Pygame version of Doodle Jump with snappy, motion-based controls.",
-  image: "/portfolio/images/embeddedjump.png",
+  image: "/images/embeddedjump.png",
   link: "https://pages.github.coecis.cornell.edu/ece3140-sp2024/mwm223-sd699/",
   linkgithub: "",
   technologies: ["c", "python"],
@@ -45,7 +45,7 @@ const CamlCapital = {
   title: "Caml Capital",
   description:
     "Functional programming approach to Monopoly, brought to life as a terminal-based multiplayer game. Using functional paradigms, it supports buying properties, houses, and hotels, as well as all community chest and chance spaces for a complete Monopoly experience.",
-  image: "/portfolio/images/camlcapital.jpg",
+  image: "/images/camlcapital.jpg",
   link: "",
   linkgithub: "https://github.com/sharanyadabas/cs3110-final-project/",
   technologies: ["ocaml"],
@@ -55,7 +55,7 @@ const Portfolio = {
   title: "Portfolio",
   description:
     "Portfolio website that allows viewers to interact with my projects and provides relevant information about me as a developer. Created from scratch to practice working with React Hooks and MaterialUI ",
-  image: "/portfolio/images/portfolio.png",
+  image: "/images/portfolio.png",
   link: "",
   linkgithub: "https://github.com/sharanyadabas/portfolio",
   technologies: ["react", "materialui", "javascript"],
@@ -65,7 +65,7 @@ const EtchSketch = {
   title: "Etch-a-Sketch",
   description:
     "Interactive drawing tablet that features a resizable canvas. Allows for users to pick from greyscale, color, drag, and hover modes. Note: To begin, must select both a color and drawing mode",
-  image: "/portfolio/images/etchsketch.jpeg",
+  image: "/images/etchsketch.jpeg",
   link: "https://sharanyadabas.github.io/etch-a-sketch/",
   linkgithub: "https://github.com/sharanyadabas/etch-a-sketch",
   technologies: ["javascript", "html5", "css3"],
@@ -75,7 +75,7 @@ const Calculator = {
   title: "Calculator",
   description:
     "4 function calculator that supports floating point arithmetic. Has a memory feature that allows for users to execute continuous operations on a value",
-  image: "/portfolio/images/calculator.jpeg",
+  image: "/images/calculator.jpeg",
   link: "https://sharanyadabas.github.io/calculator/",
   linkgithub: "https://github.com/sharanyadabas/calculator",
   technologies: ["javascript", "html5", "css3"],

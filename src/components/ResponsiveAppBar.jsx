@@ -104,7 +104,7 @@ function ResponsiveAppBar({ currentPage, buttonAnimation }) {
                   </MenuItem>
                 ) : (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <ResumePDF resumeLink="/portfolio/sdabas_resume.pdf">
+                    <ResumePDF resumeLink="/sdabas_resume.pdf">
                       {page}
                     </ResumePDF>
                   </MenuItem>
@@ -152,7 +152,7 @@ function ResponsiveAppBar({ currentPage, buttonAnimation }) {
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: "#f5f7fa", display: "block" }}
                 >
-                  <ResumePDF resumeLink="/portfolio/sdabas_resume.pdf">
+                  <ResumePDF resumeLink="/sdabas_resume.pdf">
                     <Typography
                       noWrap
                       component="a"
