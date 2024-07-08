@@ -10,7 +10,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import ThemeContext from "./ThemeContext";
 
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route,
   Navigate,
