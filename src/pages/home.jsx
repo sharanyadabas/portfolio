@@ -3,10 +3,12 @@ import { useRef } from "react";
 import ResponsiveAppBar from "../components/ResponsiveAppBar";
 import ThemeBox from "../components/ThemeBox";
 import { Typography, Stack } from "@mui/material";
+import { useMediaQuery } from "@mui/material";
 
 const Spline = React.lazy(() => import("@splinetool/react-spline"));
 
 function Home() {
+  const isMobile = useMediaQuery("(max-width:600px)");
   const avatar = useRef();
 
   function onLoad(spline) {
@@ -34,17 +36,19 @@ function Home() {
         gap="5vw"
         padding="5vw"
       >
-        <Spline
-          style={{
-            width: "350px",
-            height: "350px",
-            borderRadius: "100%",
-            borderWidth: "10px",
-            borderStyle: "solid",
-          }}
-          scene="https://prod.spline.design/xbErh2ldmymfVxSf/scene.splinecode"
-          onLoad={onLoad}
-        />
+        {!isMobile && (
+          <Spline
+            style={{
+              width: "350px",
+              height: "350px",
+              borderRadius: "100%",
+              borderWidth: "10px",
+              borderStyle: "solid",
+            }}
+            scene="https://prod.spline.design/o9BfKGQ3Vh8mS4zv/scene.splinecode"
+            onLoad={onLoad}
+          />
+        )}
         <ThemeBox
           sx={{
             backgroundColor: "primary.main",
