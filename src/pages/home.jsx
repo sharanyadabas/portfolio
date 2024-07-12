@@ -36,19 +36,20 @@ function Home() {
         gap="5vw"
         padding="5vw"
       >
-        {!isMobile && (
-          <Spline
-            style={{
-              width: "350px",
-              height: "350px",
-              borderRadius: "100%",
-              borderWidth: "10px",
-              borderStyle: "solid",
-            }}
-            scene="https://prod.spline.design/o9BfKGQ3Vh8mS4zv/scene.splinecode"
-            onLoad={onLoad}
-          />
-        )}
+        <Spline
+          style={{
+            width: "350px",
+            height: "350px",
+            visibility: isMobile ? "hidden" : "visible",
+            position: isMobile ? "absolute" : "static",
+            borderRadius: "100%",
+            borderWidth: "10px",
+            borderStyle: "solid",
+          }}
+          scene="https://prod.spline.design/o9BfKGQ3Vh8mS4zv/scene.splinecode"
+          onLoad={onLoad}
+        />
+
         <ThemeBox
           sx={{
             backgroundColor: "primary.main",
