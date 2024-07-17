@@ -17,7 +17,7 @@ const ExerciseEngine = {
   description:
     "Exercise search engine that is powered by single value decomposition on exercise descriptions to rank similarities between different exercises. Users can query via dropdown or ad-hoc search and use filters on muscle groups or equipment.",
   image: "/images/exengine.jpeg",
-  link: "http://3.15.240.235:8080/",
+  link: "https://exercise.3tf5a19ir6p5e.us-east-1.cs.amazonlightsail.com/",
   linkgithub: "https://github.com/sharanyadabas/Exercise-Engine-SVD",
   technologies: [
     "python",
